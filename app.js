@@ -65,7 +65,7 @@ const createSlider = () => {
  
   const duration = document.getElementById('duration').value;
   if (duration < 0) {
-    alert('time negative');
+    alert('Time cannot be negative !!');
   }
   else {
     document.querySelector('.main').style.display = 'block';
