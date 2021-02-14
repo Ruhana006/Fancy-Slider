@@ -65,8 +65,9 @@ const createSlider = () => {
   sliderContainer.appendChild(prevNext)
  
   const duration = document.getElementById('duration').value;
-  if (duration < 0) {
-    alert('Time cannot be negative !!');
+  // for negative duration input
+  if (duration <= 0 ) {
+    alert('Time cannot be negative neither zero !!');
   }
   else {
     document.querySelector('.main').style.display = 'block';
@@ -102,16 +103,13 @@ const changeSlide = (index) => {
     slideIndex = items.length - 1
     index = slideIndex;
   };
-
   if (index >= items.length) {
     index = 0;
     slideIndex = 0;
   }
-
   items.forEach(item => {
     item.style.display = "none"
   })
-
   items[index].style.display = "block"
 }
 
@@ -126,7 +124,7 @@ searchBtn.addEventListener('click', function () {
 sliderBtn.addEventListener('click', function () {
   createSlider()
 })
-// enter key eventlistener
+// Enter key eventlistener
 
 document.getElementById('search')
   .addEventListener('keypress', function (event) {
@@ -136,7 +134,7 @@ document.getElementById('search')
   })
 
 
-  // extra added Enter key eventlistener for slider
+// Extra added Enter key eventlistener for slider
 
 document.getElementById('duration')
  .addEventListener('keypress',function(event){
