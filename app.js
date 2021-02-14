@@ -134,6 +134,14 @@ document.getElementById('search')
     }
   })
 
+// extra added Enter key eventlistener for slider
+document.getElementById('duration')
+ .addEventListener('keypress',function(event){
+   if(event.key == 'Enter'){
+     document.getElementById('create-slider').click();
+   }
+ })
+
 // toggle spinner
 const toggleSpinner = () => {
   const spinner = document.getElementById('loading-spinner');
