@@ -37,6 +37,7 @@ let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
   element.classList.add('added')
+  //for image select-disselect 
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
@@ -134,7 +135,9 @@ document.getElementById('search')
     }
   })
 
-// extra added Enter key eventlistener for slider
+
+  // extra added Enter key eventlistener for slider
+
 document.getElementById('duration')
  .addEventListener('keypress',function(event){
    if(event.key == 'Enter'){
@@ -145,5 +148,5 @@ document.getElementById('duration')
 // toggle spinner
 const toggleSpinner = () => {
   const spinner = document.getElementById('loading-spinner');
-  spinner.classList.toggle('d-lg-none');
+  spinner.classList.toggle('d-none');
 }
